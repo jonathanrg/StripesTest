@@ -1,11 +1,3 @@
-<!--
- ! Excerpted from "Stripes: and Java Web Development is Fun Again",
- ! published by The Pragmatic Bookshelf.
- ! Copyrights apply to this code. It may not be used to create training material, 
- ! courses, books, articles, and the like. Contact us if you are in doubt.
- ! We make no guarantees that this code is fit for any purpose. 
- ! Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
--->
 <%@page contentType="text/html;charset=ISO-8859-1" language="java"%>
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <s:layout-definition>
@@ -20,7 +12,6 @@
 
     <body>
       <div id="panel">
-        
         <div id="header">
           <span class="title">${title}</span>
           <span class="menu">
@@ -29,22 +20,19 @@
             </s:layout-component>
           </span>
         </div>
-        
 
         <s:messages/>
 
-        
         <div id="body">
-          <s:layout-component name="body"/>
+          <s:layout-component name="body">
+            
+          </s:layout-component>
         </div>
-        
 
         <div class="clear"></div>
 
         <div id="footer">
           <div class="padded">
-            Footer goes here.
-
             <!-- View source links just for convenience -->
             | Source:
             <s:link beanclass="es.unileon.action.ViewSourceActionBean">

@@ -16,43 +16,43 @@
       <table class="form">
         <tr>
           <td><s:label for="contact.email"/>:</td>
-          <td>
-            <s:text name="contact.email" class="required"/>
-          </td>
+          <td><s:text name="contact.email" class="required"/></td>
           <td class="error"><s:errors field="contact.email"/></td>
         </tr>
         <tr>
-          <td>
-            <s:label for="contact.firstName"/>:
-          </td>
+          <td><s:label for="contact.firstName"/>:</td>
           <td><s:text name="contact.firstName"/></td>
           <td class="error"><s:errors field="contact.firstName"/></td>
         </tr>
         <tr>
-          <td>
-            <s:label for="contact.lastName"/>:
-          </td>
+          <td><s:label for="contact.lastName"/>:</td>
           <td><s:text name="contact.lastName"/></td>
           <td class="error"><s:errors field="contact.lastName"/></td>
         </tr>
         <tr>
-          <td>
-            <s:label for="contact.phoneNumber"/>:
-          </td>
+          <td><s:label for="contact.phoneNumber"/>:</td>
           <td>
             <s:text name="contact.phoneNumber" formatType="dashes"/>
           </td>
           <td class="error"><s:errors field="contact.phoneNumber"/></td>
         </tr>
         <tr>
-          <td>
-            <s:label for="contact.birthDate"/>:
-          </td>
+          <td><s:label for="contact.birthDate"/>:</td>
           <td>
             <s:text name="contact.birthDate"
               formatPattern="yyyy-MM-dd"/>
           </td>
           <td class="error"><s:errors field="contact.birthDate"/></td>
+        </tr>
+        <tr>
+          <td><s:label for="contact.gender"/>:</td>
+          <td class="field">
+            
+            <c:forEach var="gender" items="${actionBean.genders}">
+              <s:radio name="contact.gender" value="${gender}"/>${gender}
+            </c:forEach>
+            
+          </td>
         </tr>
         <tr>
           <td>&nbsp;</td>

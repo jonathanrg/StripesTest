@@ -6,24 +6,28 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 ***/
+
 package es.unileon.model;
+
 
 import java.util.Date;
 
+
 public class Contact extends ModelBase {
-    private Integer id;
+    /* ... */
+
     private String firstName;
     private String lastName;
     private String email;
     private PhoneNumber phoneNumber;
     private Date birthDate;
 
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private Gender gender;
+    /* ... */
+
+
+    /* Getters and setters... */
+
     public String getFirstName() {
         return firstName;
     }
@@ -55,17 +59,18 @@ public class Contact extends ModelBase {
         this.birthDate = birthDate;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        try { return id.equals(((Contact) obj).getId()); }
-        catch (Exception exc) { return false; }
+    public Gender getGender() {
+        return gender;
     }
-    @Override
-    public int hashCode() {
-        return 31 + ((id == null) ? 0 : id.hashCode());
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
+
+
     @Override
     public String toString() {
         return String.format("%s %s", firstName, lastName);
     }
+
 }
+

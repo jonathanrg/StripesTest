@@ -6,9 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 ***/
-
 package es.unileon.ext;
-
 
 import java.util.Collection;
 import java.util.Locale;
@@ -16,11 +14,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.sourceforge.stripes.validation.ScopedLocalizableError;
-//import net.sourceforge.stripes.validation.SimpleError;
 import net.sourceforge.stripes.validation.TypeConverter;
 import net.sourceforge.stripes.validation.ValidationError;
 import es.unileon.model.PhoneNumber;
-
 
 public class PhoneNumberTypeConverter
     implements TypeConverter<PhoneNumber>
@@ -39,13 +35,11 @@ public class PhoneNumberTypeConverter
                 matcher.group(1), matcher.group(2), matcher.group(3));
         }
         else {
-        	errors.add(
-        		//errors.add(new SimpleError("{1} is not a valid {0}"));
-        		new ScopedLocalizableError("converter.phoneNumber", "invalid"));
+            errors.add(
+                new ScopedLocalizableError("converter.phoneNumber", "invalid"));
         }
         return result;
     }
     public void setLocale(Locale locale) {
     }
 }
-

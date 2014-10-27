@@ -6,16 +6,12 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 ***/
-
 package es.unileon.ext;
 
-
 import java.util.Locale;
-
 import net.sourceforge.stripes.exception.StripesRuntimeException;
 import net.sourceforge.stripes.format.Formatter;
 import es.unileon.model.PhoneNumber;
-
 
 public class PhoneNumberFormatter implements Formatter<PhoneNumber> {
     private String formatType = "dashes";
@@ -44,4 +40,3 @@ public class PhoneNumberFormatter implements Formatter<PhoneNumber> {
             phoneNumber.getPrefix(), phoneNumber.getSuffix());
     }
 }
-

@@ -8,18 +8,23 @@
 ***/
 
 package es.unileon.model;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Folder extends ModelBase {
     private String name;
-    private int numberOfMessages;
-
-    /* getters and setters... */
+    private List<Message> messages = new ArrayList<Message>();
 
     public Folder() {
     }
-    public Folder(String name, int numberOfMessages) {
+    public Folder(String name) {
         setName(name);
-        setNumberOfMessages(numberOfMessages);
     }
+    /* getters and setters... */
+
 
     public String getName() {
         return name;
@@ -27,12 +32,16 @@ public class Folder extends ModelBase {
     public void setName(String name) {
         this.name = name;
     }
-    public int getNumberOfMessages() {
-        return numberOfMessages;
+    public List<Message> getMessages() {
+        return messages;
     }
-    public void setNumberOfMessages(int numberOfMessages) {
-        this.numberOfMessages = numberOfMessages;
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 

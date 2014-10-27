@@ -38,13 +38,17 @@
             formatPattern="yyyy-MM-dd"/>
         </td>
       </tr>
+      <tr>
+        <td class="label"><s:label for="contact.gender"/>:</td>
+        <td class="value">${actionBean.contact.gender}</td>
+      </tr>
     </table>
     <p>
-      <s:link beanclass="stripesbook.action.ContactFormActionBean">
+      <s:link beanclass="es.unileon.action.ContactFormActionBean">
         <s:param name="contact" value="${actionBean.contact}"/>
         Update
       </s:link> |
-      <s:link beanclass="stripesbook.action.ContactListActionBean">
+      <s:link beanclass="es.unileon.action.ContactListActionBean">
         Back to List
       </s:link>
     </p>

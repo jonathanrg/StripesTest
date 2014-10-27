@@ -20,14 +20,24 @@ a, a:visited {
 #header, #body, .padded {
   padding: 8px;
 }
+#body {
+  padding-bottom: 40px;
+}
 #header {
   background-color: #EEFFDD;
 }
 #messages {
   background-color: #DDEECC;
 }
-#header, #messages {
+#errors {
+  background-color: #FFCCCC;
+}
+#header, #messages, #errors {
   border-bottom: 2px solid #EECCAA;
+}
+#errors ul {
+  margin: 0;
+  color: #880000;
 }
 #panel {
   position: relative;
@@ -58,9 +68,7 @@ span.title {
   font-weight: bold;
 }
 span.menu {
-  position: absolute;
-  top: 8px;
-  left: 11%;
+  margin-left: 12px;
 }
 span.currentSection {
   color: #FFFFFF;
@@ -94,9 +102,6 @@ table.view td.value {
   font-family: monospace;
 }
 /* Display Tag */
-table#contact {
-  margin-top: 8px;
-}
 tr.odd {
   background-color: #E5F5E5;
 }
@@ -117,6 +122,10 @@ table.form td {
   color: #004499;
   border: none;
   padding: 4px;
+  text-align: right;
+}
+table.form td.error, table.form td.field {
+  text-align: left;
 }
 input, textarea {
   background-color: #F5F5FF;
@@ -141,7 +150,7 @@ span.error {
   color: #880000;
   padding: 8px;
 }
-input.error {
+input.error, select.error {
   border: 2px solid #880000;
   background-color: #FFDDDD;
 }
@@ -153,8 +162,17 @@ label.error {
 input.required {
   border-width: 2px;
 }
-
-
-
-
-
+/* More Form controls */
+div#action {
+  margin-top: 8px;
+}
+table#compose th, table#details th {
+  text-align: right;
+}
+div#buttons {
+  margin-top: 8px;
+}
+.left {
+  float: left;
+  margin-right: 8px;
+}

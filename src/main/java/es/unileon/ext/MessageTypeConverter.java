@@ -14,23 +14,23 @@ import java.util.Locale;
 import net.sourceforge.stripes.validation.SimpleError;
 import net.sourceforge.stripes.validation.TypeConverter;
 import net.sourceforge.stripes.validation.ValidationError;
-import es.unileon.dao.ContactDao;
-import es.unileon.dao.mock.MockContactDao;
-import es.unileon.model.Contact;
+import es.unileon.dao.FolderDao;
+import es.unileon.dao.mock.MockFolderDao;
+import es.unileon.model.Message;
 
-public class ContactTypeConverter implements TypeConverter<Contact> {
-    private ContactDao contactDao = MockContactDao.getInstance();
+public class MessageTypeConverter implements TypeConverter<Message> {
+    private FolderDao folderDao = MockFolderDao.getInstance();
 
-    public Contact convert(String string,
-        Class<? extends Contact> type,
+    public Message convert(String string,
+        Class<? extends Message> type,
         Collection<ValidationError> errors)
     {
         try {
-            return contactDao.read(new Integer(string));
+            return folderDao.readMessage(new Integer(string));
         }
         catch (Exception exc) {
             errors.add(new SimpleError(
-                "The contact ID {1} is not valid."));
+                "The message ID {1} is not valid."));
             return null;
         }
     }

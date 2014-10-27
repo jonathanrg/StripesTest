@@ -6,18 +6,8 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 ***/
-
-package es.unileon.dao;
-
-
-import es.unileon.model.Folder;
-import es.unileon.model.Message;
-
-
-public interface FolderDao extends Dao<Folder> {
-    public Message readMessage(Integer messageId);
-    public void addMessage(Message message, Folder folder);
-    public void deleteMessage(Message message);
-    public void sendMessage(Message message);
+package es.unileon.model;
+public enum Gender {
+    Female,
+    Male
 }
-

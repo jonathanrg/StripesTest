@@ -11,7 +11,6 @@ package es.unileon.ext;
 
 
 import java.util.Locale;
-
 import net.sourceforge.stripes.format.Formatter;
 import es.unileon.model.Contact;
 

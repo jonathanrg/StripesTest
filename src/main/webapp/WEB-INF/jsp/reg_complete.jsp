@@ -6,14 +6,17 @@
  ! We make no guarantees that this code is fit for any purpose. 
  ! Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 -->
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 
-<html>
-  <head>
-    <title>View source - ${actionBean.filename}</title>
-  </head>
-  <body>
-    <p><u>View source - ${actionBean.filename}</u></p>
-    <pre>${fn:escapeXml(actionBean.source)}</pre>
-  </body>
-</html>
+<s:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
+  title="Registration">
+  <s:layout-component name="body">
+  <%-- START:this --%>
+    <p>Registration complete!</p>
+    You may now
+    <s:link beanclass="es.unileon.action.LoginActionBean">
+      login
+    </s:link>.
+  <%-- END:this --%>
+  </s:layout-component>
+</s:layout-render>

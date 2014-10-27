@@ -23,6 +23,7 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
 import net.sourceforge.stripes.validation.ValidationErrors;
 import net.sourceforge.stripes.validation.ValidationMethod;
 import es.unileon.model.Contact;
+import es.unileon.model.Gender;
 
 public class ContactFormActionBean extends ContactBaseActionBean {
     private static final String FORM="/WEB-INF/jsp/contact_form.jsp";
@@ -31,7 +32,6 @@ public class ContactFormActionBean extends ContactBaseActionBean {
     public Resolution form() {
         return new ForwardResolution(FORM);
     }
-
     public Resolution save() {
         Contact contact = getContact();
         getContactDao().save(contact);
@@ -40,7 +40,6 @@ public class ContactFormActionBean extends ContactBaseActionBean {
         );
         return new RedirectResolution(ContactListActionBean.class);
     }
-
     @DontValidate
     public Resolution cancel() {
         getContext().getMessages().add(
@@ -70,8 +69,12 @@ public class ContactFormActionBean extends ContactBaseActionBean {
                 "{1} is already used by {2}.", other));
         }
     }
-
     public Date getToday() {
         return new Date();
     }
+    
+    public Gender[] getGenders() {
+        return Gender.values();
+    }
+    
 }

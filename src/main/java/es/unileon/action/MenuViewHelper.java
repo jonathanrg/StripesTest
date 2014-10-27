@@ -6,15 +6,12 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
 ***/
-
 package es.unileon.action;
-
 
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
-
 
 public class MenuViewHelper extends BaseActionBean {
     public Section[] getSections() {
@@ -45,4 +42,3 @@ public class MenuViewHelper extends BaseActionBean {
         public String getBeanclass() { return beanclass; }
     }
 }
-
