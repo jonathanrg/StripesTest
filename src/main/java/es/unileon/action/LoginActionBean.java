@@ -41,25 +41,16 @@ public class LoginActionBean extends BaseActionBean {
         this.password = password;
     }
     
-    
     @ValidationMethod
     public void validateUser(ValidationErrors errors) {
         User user = userDao.findByUsername(username);
         if (user == null) {
-            errors.add("username",
-    
-    
-                new SimpleError("The primary email was not found."));
-    
-    
+            errors.add("username",       
+                new SimpleError("The primary email was not found."));    
         }
         else if (!user.getPassword().equals(password)) {
             errors.add("password",
-    
-    
                 new SimpleError("The password is incorrect."));
-    
-    
         }
     }
     
